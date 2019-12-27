@@ -87,6 +87,50 @@ Protected Module SystemFunctions
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Sub GetRamInfo()
+		  var cShell as new sharedFunctions.cCMD
+		  
+		  #if TargetMacOS then // Run Mac Stuff
+		    // Let's Run this again, incase the results from the prior run is gone, or the order has changed
+		    if sSystemOutput = "" then
+		      cShell.execute("system_profiler SPHardwareDataType")
+		    end if
+		  #elseif TargetWindows then
+		    // Run Windows Stuff
+		  #else
+		    // Must Be Linux!, Someday we will do Linux Stuff...
+		  #endif
+		  
+		  MainWindow.LoadingThread.AddUserInterfaceUpdate("UItext":"Loading Ram Information")
+		  MainWindow.LoadingThread.AddUserInterfaceUpdate("UIProgress":40)
+		  
+		  // Only relevant if shell results got cleared from earlier, so again we don't need to run this twice if not the case
+		  if sSystemOutput = "" then
+		    while cShell.bDone = False
+		      cShell.Poll()
+		      if cShell.sBuffer <> "" then
+		        MainWindow.LoadingThread.AddUserInterfaceUpdate("UItext":cShell.sBuffer)
+		      end if
+		    wend
+		    
+		    sSystemOutput = cShell.sResult
+		  end if
+		  
+		  Dim sResult as String
+		  #if TargetMacOS then // Run Mac Stuff
+		    sResult = SharedFunctions.regExr(rRam, sSystemOutput, 1)
+		    
+		  #elseif TargetWindows then
+		    // Run Windows Stuff
+		  #else
+		    // Must Be Linux!, Someday we will do Linux Stuff...
+		  #endif
+		  
+		  GlobalVariables.sRam = sResult
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub GetSerialNumber()
 		  var cShell as new sharedFunctions.cCMD
 		  

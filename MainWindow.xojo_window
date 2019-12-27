@@ -1548,6 +1548,7 @@ End
 		  end if
 		  
 		  MainWindow.LoadingThread.AddUserInterfaceUpdate("ApplyProcessor":sProcessor)
+		  MainWindow.LoadingThread.AddUserInterfaceUpdate("ApplyRam":sRam)
 		  
 		  // Make Windows Usable
 		  MainWindow.LoadingThread.AddUserInterfaceUpdate("EnableStuff":True)
@@ -1574,6 +1575,9 @@ End
 		  
 		  // Get Processor Info
 		  SystemFunctions.GetProcessorInfo()
+		  
+		  // Get Ram Info
+		  SystemFunctions.GetRamInfo()
 		  
 		  // Let the App Know We are Finished!
 		  MainWindow.ApplyLoadedData()
@@ -1606,6 +1610,10 @@ End
 		    
 		    If update.HasKey("ApplyProcessor") Then
 		      comboProcessor.Value = update.Value("ApplyProcessor").StringValue
+		    End If
+		    
+		    If update.HasKey("ApplyRam") Then
+		      comboRam.Value = update.Value("ApplyRam").StringValue
 		    End If
 		    
 		    
