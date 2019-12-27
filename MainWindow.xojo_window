@@ -10,7 +10,7 @@ Begin Window MainWindow
    HasFullScreenButton=   False
    HasMaximizeButton=   False
    HasMinimizeButton=   True
-   Height          =   593
+   Height          =   663
    ImplicitInstance=   True
    MacProcID       =   0
    MaximumHeight   =   32000
@@ -20,7 +20,7 @@ Begin Window MainWindow
    MinimumHeight   =   64
    MinimumWidth    =   64
    Resizeable      =   False
-   Title           =   "Computer Inventory Tool"
+   Title           =   "Computer Inventory Tool by Forrester Terry"
    Type            =   "3"
    Visible         =   True
    Width           =   593
@@ -52,7 +52,7 @@ Begin Window MainWindow
       Underline       =   False
       Visible         =   True
       Width           =   381
-      Begin ComboBox ComboBox2
+      Begin ComboBox comboBrand
          AllowAutoComplete=   False
          AllowAutoDeactivate=   True
          AllowFocusRing  =   True
@@ -399,7 +399,7 @@ Begin Window MainWindow
          Visible         =   True
          Width           =   85
       End
-      Begin ComboBox ComboBox4
+      Begin ComboBox comboRam
          AllowAutoComplete=   False
          AllowAutoDeactivate=   True
          AllowFocusRing  =   True
@@ -434,7 +434,7 @@ Begin Window MainWindow
          Visible         =   True
          Width           =   214
       End
-      Begin ComboBox ComboBox5
+      Begin ComboBox comboProcessor
          AllowAutoComplete=   False
          AllowAutoDeactivate=   True
          AllowFocusRing  =   True
@@ -469,7 +469,7 @@ Begin Window MainWindow
          Visible         =   True
          Width           =   214
       End
-      Begin ComboBox ComboBox6
+      Begin ComboBox comboHDDsize
          AllowAutoComplete=   False
          AllowAutoDeactivate=   True
          AllowFocusRing  =   True
@@ -539,7 +539,7 @@ Begin Window MainWindow
          Visible         =   True
          Width           =   85
       End
-      Begin ComboBox ComboBox7
+      Begin ComboBox comboHDDtype
          AllowAutoComplete=   False
          AllowAutoDeactivate=   True
          AllowFocusRing  =   True
@@ -603,7 +603,7 @@ Begin Window MainWindow
       Underline       =   False
       Visible         =   True
       Width           =   381
-      Begin ComboBox ComboBox3
+      Begin ComboBox comboCondition
          AllowAutoComplete=   True
          AllowAutoDeactivate=   True
          AllowFocusRing  =   True
@@ -708,7 +708,7 @@ Begin Window MainWindow
          Visible         =   True
          Width           =   112
       End
-      Begin TextArea TextArea1
+      Begin TextArea taNotes
          AllowAutoDeactivate=   True
          AllowFocusRing  =   True
          AllowSpellChecking=   True
@@ -786,7 +786,7 @@ Begin Window MainWindow
       Underline       =   False
       Visible         =   True
       Width           =   160
-      Begin CheckBox CheckBox1
+      Begin CheckBox cbBluetooth
          AllowAutoDeactivate=   True
          Bold            =   False
          Caption         =   "Bluetooth"
@@ -818,7 +818,7 @@ Begin Window MainWindow
          VisualState     =   "0"
          Width           =   120
       End
-      Begin CheckBox CheckBox2
+      Begin CheckBox cbWifi
          AllowAutoDeactivate=   True
          Bold            =   False
          Caption         =   "Wifi"
@@ -850,7 +850,7 @@ Begin Window MainWindow
          VisualState     =   "0"
          Width           =   120
       End
-      Begin CheckBox CheckBox3
+      Begin CheckBox cbBlueRay
          AllowAutoDeactivate=   True
          Bold            =   False
          Caption         =   "BlueRay"
@@ -882,7 +882,7 @@ Begin Window MainWindow
          VisualState     =   "0"
          Width           =   120
       End
-      Begin CheckBox CheckBox4
+      Begin CheckBox cbUSBC
          AllowAutoDeactivate=   True
          Bold            =   False
          Caption         =   "USB-C"
@@ -914,7 +914,7 @@ Begin Window MainWindow
          VisualState     =   "0"
          Width           =   120
       End
-      Begin CheckBox CheckBox5
+      Begin CheckBox cbHDMI
          AllowAutoDeactivate=   True
          Bold            =   False
          Caption         =   "HDMI"
@@ -946,7 +946,7 @@ Begin Window MainWindow
          VisualState     =   "0"
          Width           =   120
       End
-      Begin CheckBox CheckBox6
+      Begin CheckBox cbDP
          AllowAutoDeactivate=   True
          Bold            =   False
          Caption         =   "DispalyPort"
@@ -978,7 +978,7 @@ Begin Window MainWindow
          VisualState     =   "0"
          Width           =   120
       End
-      Begin CheckBox CheckBox7
+      Begin CheckBox cbTB2
          AllowAutoDeactivate=   True
          Bold            =   False
          Caption         =   "Thunderbolt 2"
@@ -1010,7 +1010,7 @@ Begin Window MainWindow
          VisualState     =   "0"
          Width           =   120
       End
-      Begin CheckBox CheckBox8
+      Begin CheckBox cbTB3
          AllowAutoDeactivate=   True
          Bold            =   False
          Caption         =   "Thunderbolt 3"
@@ -1069,7 +1069,7 @@ Begin Window MainWindow
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   502
+      Top             =   572
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -1101,7 +1101,7 @@ Begin Window MainWindow
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   502
+      Top             =   572
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -1133,7 +1133,7 @@ Begin Window MainWindow
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   502
+      Top             =   572
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -1167,7 +1167,7 @@ Begin Window MainWindow
       Underline       =   False
       Visible         =   True
       Width           =   160
-      Begin ComboBox ComboBox8
+      Begin ComboBox comboOS
          AllowAutoComplete=   False
          AllowAutoDeactivate=   True
          AllowFocusRing  =   True
@@ -1272,7 +1272,7 @@ Begin Window MainWindow
          Visible         =   True
          Width           =   144
       End
-      Begin TextArea TextArea2
+      Begin TextArea taSoftware
          AllowAutoDeactivate=   True
          AllowFocusRing  =   True
          AllowSpellChecking=   True
@@ -1340,7 +1340,7 @@ Begin Window MainWindow
       TabIndex        =   14
       TabPanelIndex   =   0
       Tooltip         =   ""
-      Top             =   553
+      Top             =   623
       Transparent     =   False
       Value           =   100.0
       Visible         =   True
@@ -1374,7 +1374,7 @@ Begin Window MainWindow
       TextAlignment   =   "0"
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   534
+      Top             =   604
       Transparent     =   False
       Underline       =   False
       Value           =   "Done Loading Computer Information. Please Double Check Before Submitting"
@@ -1415,11 +1415,104 @@ Begin Window MainWindow
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   502
+      Top             =   572
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   123
+   End
+   Begin GroupBox GroupBox1
+      AllowAutoDeactivate=   True
+      Bold            =   True
+      Caption         =   "AirTable API Configuration"
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   58
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   19
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   502
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   553
+      Begin PopupMenu popAirTable
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "GroupBox1"
+         InitialValue    =   ""
+         Italic          =   False
+         Left            =   28
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   0
+         SelectedRowIndex=   0
+         TabIndex        =   0
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tooltip         =   "Select AirTable Account to Submit to:"
+         Top             =   533
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   385
+      End
+      Begin PushButton bttnAddAirTable
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "Add API"
+         Default         =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   21
+         Index           =   -2147483648
+         InitialParent   =   "GroupBox1"
+         Italic          =   False
+         Left            =   425
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   "0"
+         Scope           =   0
+         TabIndex        =   1
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   532
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   128
+      End
    End
 End
 #tag EndWindow
@@ -1445,6 +1538,14 @@ End
 		  // Apply Information
 		  MainWindow.LoadingThread.AddUserInterfaceUpdate("ApplySerial":sSerialNumber)
 		  MainWindow.LoadingThread.AddUserInterfaceUpdate("ApplyModel":sModel)
+		  
+		  if TargetMacOS then
+		    MainWindow.LoadingThread.AddUserInterfaceUpdate("ApplyBrand":"Apple")
+		  elseif TargetWindows then
+		    // Put Windows Code Here to Apply the Brand
+		  else
+		    // Put Linux Detected Brand Here
+		  end if
 		  
 		  // Make Windows Usable
 		  MainWindow.LoadingThread.AddUserInterfaceUpdate("EnableStuff":True)
@@ -1493,6 +1594,10 @@ End
 		    
 		    If update.HasKey("ApplyModel") Then
 		      comboModel.Value = update.Value("ApplyModel").StringValue
+		    End If
+		    
+		    If update.HasKey("ApplyBrand") Then
+		      comboBrand.Value = update.Value("ApplyBrand").StringValue
 		    End If
 		    
 		    
