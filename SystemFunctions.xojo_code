@@ -40,6 +40,53 @@ Protected Module SystemFunctions
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Sub GetProcessorInfo()
+		  var cShell as new sharedFunctions.cCMD
+		  
+		  #if TargetMacOS then // Run Mac Stuff
+		    // Let's Run this again, incase the results from the prior run is gone, or the order has changed
+		    if sSystemOutput = "" then
+		      cShell.execute("system_profiler SPHardwareDataType")
+		    end if
+		  #elseif TargetWindows then
+		    // Run Windows Stuff
+		  #else
+		    // Must Be Linux!, Someday we will do Linux Stuff...
+		  #endif
+		  
+		  MainWindow.LoadingThread.AddUserInterfaceUpdate("UItext":"Loading Processor Information")
+		  MainWindow.LoadingThread.AddUserInterfaceUpdate("UIProgress":30)
+		  
+		  // Only relevant if shell results got cleared from earlier, so again we don't need to run this twice if not the case
+		  if sSystemOutput = "" then
+		    while cShell.bDone = False
+		      cShell.Poll()
+		      if cShell.sBuffer <> "" then
+		        MainWindow.LoadingThread.AddUserInterfaceUpdate("UItext":cShell.sBuffer)
+		      end if
+		    wend
+		    
+		    sSystemOutput = cShell.sResult
+		  end if
+		  
+		  Dim sResult, ProcName, ProcSpeed as String
+		  #if TargetMacOS then // Run Mac Stuff
+		    ProcName = SharedFunctions.regExr(rProcessorName, sSystemOutput, 1)
+		    ProcSpeed =  SharedFunctions.regExr(rProcessorSpeed, sSystemOutput, 1)
+		    
+		    sResult = ProcName + " @ " + ProcSpeed
+		    
+		  #elseif TargetWindows then
+		    // Run Windows Stuff
+		  #else
+		    // Must Be Linux!, Someday we will do Linux Stuff...
+		  #endif
+		  
+		  GlobalVariables.sProcessor = sResult
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub GetSerialNumber()
 		  var cShell as new sharedFunctions.cCMD
 		  
@@ -87,6 +134,18 @@ Protected Module SystemFunctions
 
 	#tag Property, Flags = &h0
 		rModelRegEx As String = "Model Identifier: (.+)"
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		rProcessorName As String = "Processor Name: (.+)"
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		rProcessorSpeed As String = "Processor Speed: (.+)"
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		rRam As String = "Memory: (.+)"
 	#tag EndProperty
 
 	#tag Property, Flags = &h0

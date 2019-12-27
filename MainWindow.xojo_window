@@ -1547,6 +1547,8 @@ End
 		    // Put Linux Detected Brand Here
 		  end if
 		  
+		  MainWindow.LoadingThread.AddUserInterfaceUpdate("ApplyProcessor":sProcessor)
+		  
 		  // Make Windows Usable
 		  MainWindow.LoadingThread.AddUserInterfaceUpdate("EnableStuff":True)
 		  
@@ -1570,6 +1572,8 @@ End
 		  // Get the Model Numer
 		  SystemFunctions.GetModelNumber()
 		  
+		  // Get Processor Info
+		  SystemFunctions.GetProcessorInfo()
 		  
 		  // Let the App Know We are Finished!
 		  MainWindow.ApplyLoadedData()
@@ -1598,6 +1602,10 @@ End
 		    
 		    If update.HasKey("ApplyBrand") Then
 		      comboBrand.Value = update.Value("ApplyBrand").StringValue
+		    End If
+		    
+		    If update.HasKey("ApplyProcessor") Then
+		      comboProcessor.Value = update.Value("ApplyProcessor").StringValue
 		    End If
 		    
 		    

@@ -5,6 +5,14 @@ Protected Module GlobalVariables
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
+		sProcessor As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		sRam As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
 		sSerialNumber As String
 	#tag EndProperty
 
